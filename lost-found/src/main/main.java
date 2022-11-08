@@ -3,14 +3,17 @@ package main;
 import java.awt.*;
 import javax.swing.*;
 
+import lost.lost;
+
+import java.awt.event.*;
+
 public class main extends JFrame {
-	
 	// 버튼 생성
-	static JButton bl = new JButton("lost");
-	static JButton bf = new JButton("found");
-	
+	JButton bl = new JButton("lost");
+	JButton bf = new JButton("found");
+
 	// 배경이미지
-	private Image background = new ImageIcon(main.class.getResource("../image/bg.png")).getImage();
+	Image background = new ImageIcon(main.class.getResource("../image/bg.png")).getImage();
 
 	// 생성자
 	public main() {
@@ -27,23 +30,33 @@ public class main extends JFrame {
 		setVisible(true);// 창이 보이게
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// JFrame이 정상적으로 종료되게
 	}
-	
+
 	// 버튼 설정
 	public void btn() {
 		bl.setLayout(null);
-		bl.setBounds(145, 350, 150, 150); // 위치, 크기
+		bl.setBounds(140, 350, 150, 150); // 위치, 크기
+		bl.addActionListener(e -> {
+			dispose();
+			new lost().setVisible(true);
+		});
 		add(bl);
+		
+
 		bf.setLayout(null);
-		bf.setBounds(305, 350, 150, 150);
+		bf.setBounds(310, 350, 150, 150);
 		add(bf);
+
 	}
-	
+
 	// 그리는 함수 background를 그려줌
 	public void paint(Graphics g) {
 		g.drawImage(background, 0, 0, null);
 	}
+	
+
 
 	public static void main(String[] args) {
 		new main();
+		
 	}
 }
