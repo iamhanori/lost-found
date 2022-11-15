@@ -1,9 +1,7 @@
-package main;
+package frame;
 
 import java.awt.*;
 import javax.swing.*;
-
-import lost.lost;
 
 import java.awt.event.*;
 
@@ -40,23 +38,24 @@ public class main extends JFrame {
 			new lost().setVisible(true);
 		});
 		add(bl);
-		
 
 		bf.setLayout(null);
 		bf.setBounds(310, 350, 150, 150);
+		bf.addActionListener(e -> {
+			dispose();
+			new found().setVisible(true);
+		});
 		add(bf);
 
 	}
-
-	// 그리는 함수 background를 그려줌
+	
 	public void paint(Graphics g) {
 		g.drawImage(background, 0, 0, null);
 	}
 	
 
-
 	public static void main(String[] args) {
 		new main();
-		
+
 	}
 }
