@@ -18,7 +18,7 @@ public class lost extends JFrame {
 		bf.setBounds(400, 600, 100, 50); // 위치, 크기
 		bf.addActionListener(e -> {
 			dispose();
-			new found().setVisible(true);
+			new Registration().setVisible(true);
 		});
 		p.add(bf);
 

@@ -32,6 +32,6 @@ public class Intro extends JFrame {
 
 	public static void main(String[] args) {
 		new Intro();
-		new main();
+		new main().setVisible(true);
 	}
 }
